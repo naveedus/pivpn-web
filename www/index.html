@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>PiVPN Web</title>
+  <title>PiVPN Web Manager</title>
   <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
   <link rel="manifest" href="manifest.json">
   <link rel="icon" type="image/png" href="img/favicon.png">
@@ -14,7 +14,7 @@
 <body class="bg-gray-50">
   <div id="app" class="container mx-auto">
     <div v-if="authenticated === true">
-      <h1 class="text-4xl font-medium mt-10 mb-2">PiVPN Web</h1>
+      <h1 class="text-4xl font-medium mt-10 mb-2">PiVPN Web Manager</h1>
       <h2 class="text-sm text-gray-400 mb-10">{{username}}@{{hostname}} · <span class="cursor-pointer hover:underline" @click="logout">
         Logout
         <svg class="h-3 inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -311,7 +311,7 @@
     </div>
 
     <div v-if="authenticated === false">
-      <h1 class="text-4xl font-medium my-16 text-gray-700 text-center">PiVPN Web</h1>
+      <h1 class="text-4xl font-medium my-16 text-gray-700 text-center">PiVPN Web Manager</h1>
 
       <form
         @submit="login"
@@ -325,8 +325,8 @@
           </svg>
         </div>
 
-        <input type="text" name="username" placeholder="pi" v-model="username" class="px-2 py-1 text-sm text-gray-500 mb-2 border-2 border-gray-100 rounded-lg w-full focus:border-green-400 outline-none" />
-        <input type="password" name="password" placeholder="raspberry" v-model="password" class="px-2 py-1 text-sm text-gray-500 mb-5 border-2 border-gray-100 rounded-lg w-full focus:border-green-400 outline-none" />
+        <input type="text" name="username" placeholder="username" v-model="username" class="px-2 py-1 text-sm text-gray-500 mb-2 border-2 border-gray-100 rounded-lg w-full focus:border-green-400 outline-none" />
+        <input type="password" name="password" placeholder="password" v-model="password" class="px-2 py-1 text-sm text-gray-500 mb-5 border-2 border-gray-100 rounded-lg w-full focus:border-green-400 outline-none" />
         <input type="text" name="multiFactorAuthCode" v-if="useMfa" placeholder="2FA Code" v-model="multiFactorAuthCode" class="px-2 py-1 text-sm text-gray-500 mb-5 border-2 border-gray-100 rounded-lg w-full focus:border-green-400 outline-none" />
 
         <button v-if="authenticating" class="bg-green-400 w-full rounded shadow py-2 text-sm text-white cursor-not-allowed">
@@ -350,8 +350,8 @@
     </div>
 
     <p class="text-center m-10 text-gray-300 text-xs">Made by <a target="_blank" class="hover:underline"
-        href="https://emilenijssen.nl/?ref=pivpn-web">Emile Nijssen</a> · <a class="hover:underline"
-        href="https://github.com/weejewel/pivpn-web" target="_blank">GitHub</a></p>
+        href="https://github.com/naveedus">Naveed</a> · <a class="hover:underline"
+        href="https://github.com/naveedus/pivpn-web" target="_blank">GitHub</a></p>
 
 
   </div>
